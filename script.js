@@ -19,7 +19,7 @@ function computerPlay() {
 
 function playRound (userInput, computerSelection) {
     
-     userInput = prompt('Please enter rock paper or scissors');
+    //  userInput = prompt('Please enter rock paper or scissors');
     let newInput = userInput.toLowerCase();
     if (newInput == computerSelection) {
         return 'tied game';
@@ -34,16 +34,17 @@ function playRound (userInput, computerSelection) {
 
 }
 
+// function game() {
+//     //this function only needs to call the other one, nothing new to be done
+//     playRound (userInput, computerSelection);
+// }
 
 function game() {
-    const userInput = prompt(`please enter rock paper or scissors`);
-    for(i = 0; i<6; i++) {
-        
+    for (i = 0; i < 6; i++){
+        const userInput = prompt('Please enter rock paper or scissors');
         const computerSelection = computerPlay();
-        playRound(userInput,computerSelection);
-        console.log(playRound(userInput, computerSelection));
+        console.log(playRound (userInput, computerSelection));
     }
-    
 }
-game();
 
+game();
