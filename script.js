@@ -19,24 +19,26 @@ function computerPlay() {
 
 function playRound (userInput, computerSelection) {
     
-    let userInput = prompt('Please enter rock paper or scissors');
+     userInput = prompt('Please enter rock paper or scissors');
     let newInput = userInput.toLowerCase();
     if (newInput == computerSelection) {
-        return 'tie game';
+        return 'tied game';
     }
     else if ((newInput == 'rock' && computerSelection == 'scissors') || (newInput == 'paper' && computerSelection == 'rock') || (newInput == 'scissors' && computerSelection == 'paper'))
      {
-        return 'you win!';
+        return `you win! ${newInput} beats ${computerSelection} `;
     }
     else {
-        return 'you loose';
+        return `you loose ${computerSelection} beats ${newInput}`;
     }
 
 }
 
 
 function game() {
+    const userInput = prompt(`please enter rock paper or scissors`);
     for(i = 0; i<6; i++) {
+        
         const computerSelection = computerPlay();
         playRound(userInput,computerSelection);
         console.log(playRound(userInput, computerSelection));
