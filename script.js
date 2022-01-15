@@ -34,10 +34,7 @@ function playRound (userInput, computerSelection) {
 
 }
 
-// function game() {
-//     //this function only needs to call the other one, nothing new to be done
-//     playRound (userInput, computerSelection);
-// }
+
 
 function game() {
     for (i = 0; i < 6; i++){
