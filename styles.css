@@ -1,0 +1,36 @@
+body {
+    
+    background-color: bisque;
+}
+
+#buttonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 4rem;
+}
+
+.button:hover {
+    transform: scale(1.5);
+
+}
+
+.results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    /* font-size: 1rem; */
+}
+
+.score  {
+    margin: 0 1rem;
+
+}

@@ -1,47 +1,69 @@
-// Write function to return rock paper or scissors 
+let playerScore = 0;
+let computerScore = 0;
+let result;
 
 
-// Write second function that plays one round of RPS 
-    //make it case insensitive 
-    // check output with console.log 
-
-// use second function inside of new one and play a five round game 
-    //loop over 5 times 
-    //use prompt to get input from user 
 
 const gameChoices = ["rock","paper","scissors"];
+const selectedButtons = document.querySelectorAll('.button');
+// let computerSelection = function computerPlay() {
+//     return 
+// }
 
-function computerPlay() {
-    return gameChoices[Math.floor(Math.random()*gameChoices.length)];
-}
 
 
 
-function playRound (userInput, computerSelection) {
-    
-    //  userInput = prompt('Please enter rock paper or scissors');
-    let newInput = userInput.toLowerCase();
-    if (newInput == computerSelection) {
-        return 'tied game';
-    }
-    else if ((newInput == 'rock' && computerSelection == 'scissors') || (newInput == 'paper' && computerSelection == 'rock') || (newInput == 'scissors' && computerSelection == 'paper'))
-     {
-        return `you win! ${newInput} beats ${computerSelection} `;
+selectedButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      playRound(button.id);
+    });
+});
+
+function playRound(playerSelection) {
+   
+    let computerSelection = gameChoices[Math.floor(Math.random()*gameChoices.length)];
+    if (playerSelection == computerSelection) {
+            console.log('tied game') ;
+        }
+    else if ((playerSelection == 'rock' && computerSelection == 'scissors') || (playerSelection == 'paper' && computerSelection == 'rock') || (playerSelection == 'scissors' && computerSelection == 'paper'))
+    {
+        playerScore++;   
+        console.log(`you win! ${playerSelection} beats ${computerSelection} `) ;
     }
     else {
-        return `you loose ${computerSelection} beats ${newInput}`;
+        computerScore++;
+        console.log(`you loose ${computerSelection} beats ${playerSelection}`) ;
     }
-
+    
+        
 }
 
 
 
-function game() {
-    for (i = 0; i < 6; i++){
-        const userInput = prompt('Please enter rock paper or scissors');
-        const computerSelection = computerPlay();
-        console.log(playRound (userInput, computerSelection));
-    }
-}
 
-game();
+
+
+
+
+
+// function makeSelection (userInput) {
+//     console.log(userInput);
+
+//     
+// }
+
+
+
+// function game() {
+//     // for (i = 0; i < 2; i++){
+//         //  const userInput = prompt('Please enter rock paper or scissors');
+//         const computerSelection = computerPlay();
+//         console.log(playRound (userInput, computerSelection));
+//     // }
+// }
+
+// game();
+
+
+
+
