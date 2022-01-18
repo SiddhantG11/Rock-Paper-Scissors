@@ -1,16 +1,7 @@
-let playerScore = 0;
-let computerScore = 0;
-let result;
-
-
-
+let playerScore = document.querySelector('#player_score');
+let computerScore = document.querySelector('#computer_score');
 const gameChoices = ["rock","paper","scissors"];
 const selectedButtons = document.querySelectorAll('.button');
-// let computerSelection = function computerPlay() {
-//     return 
-// }
-
-
 
 
 selectedButtons.forEach((button) => {
@@ -19,38 +10,35 @@ selectedButtons.forEach((button) => {
     });
 });
 
+function incrementScore(score) {
+    score.innerText = parseInt(score.innerText) + 1;
+}
+
 function playRound(playerSelection) {
    
     let computerSelection = gameChoices[Math.floor(Math.random()*gameChoices.length)];
+    let verdict = document.createElement('div');
     if (playerSelection == computerSelection) {
-            console.log('tied game') ;
+        verdict.textContent = "The Game was a Tie";
+        document.getElementById('result').appendChild(verdict);
         }
     else if ((playerSelection == 'rock' && computerSelection == 'scissors') || (playerSelection == 'paper' && computerSelection == 'rock') || (playerSelection == 'scissors' && computerSelection == 'paper'))
     {
-        playerScore++;   
-        console.log(`you win! ${playerSelection} beats ${computerSelection} `) ;
+        incrementScore(playerScore);
+        verdict.textContent = `You Win!, ${playerSelection} beats ${computerSelection} `;
+        document.getElementById('result').appendChild(verdict);
     }
     else {
-        computerScore++;
-        console.log(`you loose ${computerSelection} beats ${playerSelection}`) ;
+        incrementScore(computerScore);
+        verdict.textContent = `You Loose! ${computerSelection} beats ${playerSelection} `;
+        document.getElementById('result').appendChild(verdict);
     }
-    
-        
+       
 }
 
 
 
 
-
-
-
-
-
-// function makeSelection (userInput) {
-//     console.log(userInput);
-
-//     
-// }
 
 
 
