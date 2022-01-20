@@ -3,6 +3,12 @@ body {
     background-color: bisque;
 }
 
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #buttonContainer {
     display: flex;
     justify-content: center;
